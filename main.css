@@ -20,11 +20,9 @@ body {
 
 #particles-container {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
     pointer-events: none;
+    z-index: 1;
 }
 
 .grimorio-container {
@@ -46,11 +44,10 @@ body {
     50% { box-shadow: 0 0 50px rgba(255, 0, 60, 0.6); }
 }
 
-.clover-header { font-size: 40px; color: var(--dark-magic); text-shadow: 0 0 5px var(--anti-magic); }
 h1 { font-family: 'Cinzel Decorative'; font-size: 1.4rem; margin: 5px 0; }
 .subtitle { font-size: 0.8rem; color: #444; text-transform: uppercase; letter-spacing: 2px; }
 
-/* Estilo de Imágenes Opciones 2 y 5 */
+/* TRUCO PARA TRANSPARENCIA */
 .photo-frame {
     position: relative;
     margin: 20px auto;
@@ -61,8 +58,8 @@ h1 { font-family: 'Cinzel Decorative'; font-size: 1.4rem; margin: 5px 0; }
 }
 
 .clover-img {
-    width: 130px;
-    filter: drop-shadow(0 0 10px rgba(0,0,0,0.6));
+    width: 140px;
+    mix-blend-mode: multiply; /* Esto quita el fondo blanco/cuadros */
     transition: 0.5s;
 }
 
@@ -78,14 +75,15 @@ h1 { font-family: 'Cinzel Decorative'; font-size: 1.4rem; margin: 5px 0; }
     box-shadow: 0 0 15px var(--gold);
 }
 
-.squad-badge img { width: 100%; }
+.squad-badge img {
+    width: 100%;
+    mix-blend-mode: screen; /* Si el logo tiene fondo negro */
+}
 
-#message { font-style: italic; color: #222; margin: 20px 0; line-height: 1.4; }
-
-/* Barras */
+/* Resto de estilos */
 .stat-bar { margin: 10px 0; text-align: left; font-size: 0.8rem; }
-.bar { background: rgba(0,0,0,0.1); height: 8px; border-radius: 4px; margin-top: 4px; }
-.fill { background: var(--dark-magic); height: 100%; border-radius: 4px; box-shadow: 0 0 8px var(--anti-magic); }
+.bar { background: rgba(0,0,0,0.1); height: 8px; border-radius: 4px; overflow: hidden; }
+.fill { background: var(--dark-magic); height: 100%; box-shadow: 0 0 8px var(--anti-magic); }
 
 .magic-btn {
     background: var(--dark-magic);
@@ -98,7 +96,7 @@ h1 { font-family: 'Cinzel Decorative'; font-size: 1.4rem; margin: 5px 0; }
     margin-top: 15px;
 }
 
-.magic-btn:hover { background: var(--anti-magic); color: white; box-shadow: 0 0 20px var(--anti-magic); }
+.magic-btn:hover { background: var(--anti-magic); color: white; transform: scale(1.1); }
 
 .particle {
     position: absolute;
