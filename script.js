@@ -1,29 +1,49 @@
 function triggerMagic() {
-    // Cambiar el mensaje con un efecto de escritura
-    const msg = document.getElementById('message');
+    // 1. Reproducir música
+    const music = document.getElementById('bg-music');
+    music.play().catch(e => console.log("La música requiere interacción previa"));
+
+    // 2. Cambiar mensaje para Jesús
     const title = document.getElementById('title');
+    const msg = document.getElementById('message');
     
-    document.body.style.backgroundColor = "#1a0005";
-    
-    title.textContent = "¡Vínculo de Sangre Activado!";
+    title.textContent = "HECHIZO: AMOR ETERNO";
     title.style.color = "#ff003c";
+    title.style.textShadow = "0 0 10px #ff003c";
     
-    msg.textContent = "Para el caballero más fuerte: Tu magia es única y eres mi persona favorita en todo el Reino del Trébol.";
-    
-    // Pequeño efecto de vibración
-    const box = document.querySelector('.grimorio-container');
-    box.style.animation = "shake 0.5s";
-    setTimeout(() => { box.style.animation = "aura 3s infinite"; }, 500);
+    msg.innerHTML = "<b>Jesús</b>, eres el capitán de mi corazón. <br> ¡Gracias por ser mi caballero mágico favorito!";
+
+    // 3. Crear partículas de antimagia
+    createParticles();
 }
 
-// Añadir el efecto de vibración en CSS dinámicamente
-const style = document.createElement('style');
-style.innerHTML = `
-    @keyframes shake {
-        0% { transform: translate(1px, 1px) rotate(0deg); }
-        20% { transform: translate(-3px, 0px) rotate(-1deg); }
-        40% { transform: translate(3px, 2px) rotate(1deg); }
-        100% { transform: translate(0px, 0px) rotate(0deg); }
+function createParticles() {
+    const container = document.getElementById('particles-container');
+    for (let i = 0; i < 50; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        
+        // Posición inicial (centro)
+        const x = window.innerWidth / 2;
+        const y = window.innerHeight / 2;
+        
+        p.style.left = x + 'px';
+        p.style.top = y + 'px';
+        
+        // Destino aleatorio
+        const destX = (Math.random() - 0.5) * 1000;
+        const destY = (Math.random() - 0.5) * 1000;
+        
+        container.appendChild(p);
+        
+        const animation = p.animate([
+            { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+            { transform: `translate(${destX}px, ${destY}px) scale(0)`, opacity: 0 }
+        ], {
+            duration: 1000 + Math.random() * 1000,
+            easing: 'ease-out'
+        });
+        
+        animation.onfinish = () => p.remove();
     }
-`;
-document.head.appendChild(style);
+}
