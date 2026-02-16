@@ -67,7 +67,7 @@ h1 { font-family: 'Cinzel Decorative'; font-size: 1.4rem; margin: 5px 0; }
     bottom: 5px;
     right: 15%;
     width: 65px;
-    background: var(--dark-magic);
+    background: #1a1a1a;
     padding: 5px;
     border-radius: 50%;
     border: 2px solid var(--gold);
