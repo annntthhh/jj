@@ -3,25 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Black Clover Fan Site</title>
+    <title>Grimorio de [Su Nombre]</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <header>
-        <h1>Trébol de Cinco Hojas</h1>
-        <nav>
-            <button onclick="changeSquad('black-bulls')">Toros Negros</button>
-            <button onclick="changeSquad('golden-dawn')">Amanecer Dorado</button>
-        </nav>
-    </header>
+    <div class="magic-overlay"></div>
+    
+    <div class="grimorio-container">
+        <header>
+            <div class="clover-icon">♣</div>
+            <h1>Grimorio de Caballero Mágico</h1>
+        </header>
 
-    <main id="content-area">
-        <section class="card">
-            <h2>"Mi magia es no rendirme"</h2>
-            <p>Bienvenido a la zona de caballeros mágicos. Selecciona una orden para cambiar el aura del sitio.</p>
-            <div id="status-msg"></div>
+        <section class="page-content">
+            <div class="scroll-decoration"></div>
+            <h2 id="title">Propiedad de un Toro Negro</h2>
+            <p id="message">"Superar los límites no es una opción, es nuestro camino."</p>
+            
+            <div class="stats">
+                <div class="stat-bar"><span>Magia:</span> <div class="bar"><div class="fill" style="width: 95%;"></div></div></div>
+                <div class="stat-bar"><span>Valor:</span> <div class="bar"><div class="fill" style="width: 100%;"></div></div></div>
+            </div>
+
+            <button class="magic-btn" onclick="triggerMagic()">Desatar Anti-Magia</button>
         </section>
-    </main>
+    </div>
 
     <script src="script.js"></script>
 </body>
