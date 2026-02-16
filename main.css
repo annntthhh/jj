@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=MedievalSharp&display=swap');
 
 :root {
-    --dark-magic: #0a0a0a;
+    --dark-magic: #0d0d0d;
     --anti-magic: #ff003c;
-    --paper: #d4bc8d;
+    --gold: #d4af37;
+    --paper: #e6d5b8;
 }
 
 body {
@@ -17,51 +18,65 @@ body {
     font-family: 'MedievalSharp', cursive;
 }
 
+/* El contenedor del Grimorio */
 .grimorio-container {
     background: var(--paper);
-    width: 350px;
-    height: 500px;
+    width: 90%;
+    max-width: 400px;
     padding: 30px;
-    border: 12px solid #3d2b1f;
-    box-shadow: 0 0 50px rgba(255, 0, 60, 0.3), inset 0 0 100px rgba(0,0,0,0.2);
+    border: 15px solid #2b1d12;
+    box-shadow: 0 0 40px rgba(0,0,0,0.8), 0 0 20px var(--anti-magic);
+    text-align: center;
     position: relative;
-    border-radius: 5px;
-    background-image: url('https://www.transparenttextures.com/patterns/old-map.png'); /* Textura de papel viejo */
+    z-index: 10;
+    background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
 }
 
-.clover-icon {
-    font-size: 50px;
-    color: var(--dark-magic);
-    text-shadow: 0 0 10px var(--anti-magic);
+/* Marco de foto tipo anime */
+.photo-frame {
+    width: 150px;
+    height: 150px;
+    margin: 20px auto;
+    border: 4px solid var(--dark-magic);
+    background: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
+    transform: rotate(-2deg);
 }
 
-h1 { font-family: 'Cinzel Decorative'; font-size: 1.2rem; color: #222; }
+.placeholder-photo { color: #555; font-size: 0.8rem; }
 
+.subtitle { font-size: 0.8rem; color: #555; letter-spacing: 1px; }
+
+/* Botón místico */
 .magic-btn {
-    margin-top: 30px;
+    margin-top: 25px;
     background: var(--dark-magic);
-    color: white;
+    color: var(--anti-magic);
     border: 2px solid var(--anti-magic);
-    padding: 12px 20px;
-    cursor: pointer;
+    padding: 15px 30px;
     font-family: 'Cinzel Decorative';
-    transition: 0.3s;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.4s;
+    letter-spacing: 2px;
 }
 
 .magic-btn:hover {
-    box-shadow: 0 0 20px var(--anti-magic);
-    transform: scale(1.05);
+    background: var(--anti-magic);
+    color: white;
+    box-shadow: 0 0 30px var(--anti-magic);
 }
 
-/* Barras de estadísticas */
-.stat-bar { margin: 15px 0; font-size: 0.9rem; color: #333; }
-.bar { background: rgba(0,0,0,0.1); height: 8px; border-radius: 4px; }
-.fill { background: var(--anti-magic); height: 100%; border-radius: 4px; box-shadow: 0 0 8px var(--anti-magic); }
-
-/* Animación de "Aura" */
-@keyframes aura {
-    0% { box-shadow: 0 0 20px rgba(255, 0, 60, 0.2); }
-    50% { box-shadow: 0 0 50px rgba(255, 0, 60, 0.5); }
-    100% { box-shadow: 0 0 20px rgba(255, 0, 60, 0.2); }
+/* Partículas negras */
+.particle {
+    position: absolute;
+    background: var(--anti-magic);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 5;
 }
-.grimorio-container { animation: aura 3s infinite; }
