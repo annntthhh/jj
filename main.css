@@ -12,71 +12,98 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
     overflow: hidden;
     font-family: 'MedievalSharp', cursive;
 }
 
-/* El contenedor del Grimorio */
+#particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
 .grimorio-container {
     background: var(--paper);
     width: 90%;
-    max-width: 400px;
-    padding: 30px;
-    border: 15px solid #2b1d12;
-    box-shadow: 0 0 40px rgba(0,0,0,0.8), 0 0 20px var(--anti-magic);
+    max-width: 380px;
+    padding: 25px;
+    border: 12px solid #2b1d12;
+    box-shadow: 0 0 40px rgba(0,0,0,0.9), 0 0 20px var(--anti-magic);
     text-align: center;
     position: relative;
     z-index: 10;
     background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
+    animation: aura 3s infinite ease-in-out;
 }
 
-/* Marco de foto tipo anime */
+@keyframes aura {
+    0%, 100% { box-shadow: 0 0 20px rgba(255, 0, 60, 0.3); }
+    50% { box-shadow: 0 0 50px rgba(255, 0, 60, 0.6); }
+}
+
+.clover-header { font-size: 40px; color: var(--dark-magic); text-shadow: 0 0 5px var(--anti-magic); }
+h1 { font-family: 'Cinzel Decorative'; font-size: 1.4rem; margin: 5px 0; }
+.subtitle { font-size: 0.8rem; color: #444; text-transform: uppercase; letter-spacing: 2px; }
+
+/* Estilo de Imágenes Opciones 2 y 5 */
 .photo-frame {
-    width: 150px;
-    height: 150px;
+    position: relative;
     margin: 20px auto;
-    border: 4px solid var(--dark-magic);
-    background: #ccc;
+    height: 180px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    box-shadow: 5px 5px 15px rgba(0,0,0,0.3);
-    transform: rotate(-2deg);
+    align-items: center;
 }
 
-.placeholder-photo { color: #555; font-size: 0.8rem; }
+.clover-img {
+    width: 130px;
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.6));
+    transition: 0.5s;
+}
 
-.subtitle { font-size: 0.8rem; color: #555; letter-spacing: 1px; }
+.squad-badge {
+    position: absolute;
+    bottom: 5px;
+    right: 15%;
+    width: 65px;
+    background: var(--dark-magic);
+    padding: 5px;
+    border-radius: 50%;
+    border: 2px solid var(--gold);
+    box-shadow: 0 0 15px var(--gold);
+}
 
-/* Botón místico */
+.squad-badge img { width: 100%; }
+
+#message { font-style: italic; color: #222; margin: 20px 0; line-height: 1.4; }
+
+/* Barras */
+.stat-bar { margin: 10px 0; text-align: left; font-size: 0.8rem; }
+.bar { background: rgba(0,0,0,0.1); height: 8px; border-radius: 4px; margin-top: 4px; }
+.fill { background: var(--dark-magic); height: 100%; border-radius: 4px; box-shadow: 0 0 8px var(--anti-magic); }
+
 .magic-btn {
-    margin-top: 25px;
     background: var(--dark-magic);
     color: var(--anti-magic);
     border: 2px solid var(--anti-magic);
-    padding: 15px 30px;
+    padding: 12px 25px;
     font-family: 'Cinzel Decorative';
-    font-weight: bold;
     cursor: pointer;
     transition: 0.4s;
-    letter-spacing: 2px;
+    margin-top: 15px;
 }
 
-.magic-btn:hover {
-    background: var(--anti-magic);
-    color: white;
-    box-shadow: 0 0 30px var(--anti-magic);
-}
+.magic-btn:hover { background: var(--anti-magic); color: white; box-shadow: 0 0 20px var(--anti-magic); }
 
-/* Partículas negras */
 .particle {
     position: absolute;
     background: var(--anti-magic);
-    width: 4px;
-    height: 4px;
+    width: 3px;
+    height: 3px;
     border-radius: 50%;
-    pointer-events: none;
-    z-index: 5;
 }
