@@ -3,29 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grimorio de [Su Nombre]</title>
+    <title>El Grimorio de Jesús</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <div class="magic-overlay"></div>
-    
+    <div id="particles-container"></div>
+
     <div class="grimorio-container">
         <header>
             <div class="clover-icon">♣</div>
-            <h1>Grimorio de Caballero Mágico</h1>
+            <h1>Grimorio de Jesús</h1>
+            <p class="subtitle">Caballero de la Orden de los Toros Negros</p>
         </header>
 
         <section class="page-content">
-            <div class="scroll-decoration"></div>
-            <h2 id="title">Propiedad de un Toro Negro</h2>
-            <p id="message">"Superar los límites no es una opción, es nuestro camino."</p>
+            <h2 id="title">Magia de Antigravedad</h2>
             
-            <div class="stats">
-                <div class="stat-bar"><span>Magia:</span> <div class="bar"><div class="fill" style="width: 95%;"></div></div></div>
-                <div class="stat-bar"><span>Valor:</span> <div class="bar"><div class="fill" style="width: 100%;"></div></div></div>
+            <div class="photo-frame">
+                <div class="placeholder-photo">Tu Caballero Favorito</div>
             </div>
 
-            <button class="magic-btn" onclick="triggerMagic()">Desatar Anti-Magia</button>
+            <p id="message">"Jesús, en este reino y en cualquier otro, mi magia siempre te elegirá a ti. ¡Superemos los límites juntos!"</p>
+            
+            <div class="stats">
+                <div class="stat-bar"><span>Fuerza:</span> <div class="bar"><div class="fill" style="width: 100%;"></div></div></div>
+                <div class="stat-bar"><span>Amor:</span> <div class="bar"><div class="fill" style="width: 150%; background: #ff4d4d;"></div></div></div>
+            </div>
+
+            <button class="magic-btn" onclick="triggerMagic()">DESATAR HECHIZO</button>
+
+            <audio id="bg-music" loop>
+                <source src="music.mp3" type="audio/mpeg">
+            </audio>
         </section>
     </div>
 
