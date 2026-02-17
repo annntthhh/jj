@@ -18,7 +18,24 @@ body {
     font-family: 'MedievalSharp', cursive;
 }
 
-/* EFECTO DE PARTÍCULAS ROJAS EN MOVIMIENTO */
+/* 2. EFECTO DE PAPEL ANTIGUO (GRANULADO) */
+.paper-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 100;
+    animation: grain 0.8s steps(10) infinite;
+}
+
+@keyframes grain {
+    0%, 100% { transform: translate(0,0); }
+    10% { transform: translate(-1%,-1%); }
+    30% { transform: translate(1%,1%); }
+    50% { transform: translate(-0.5%, 0.5%); }
+}
+
 .background-particles {
     position: fixed;
     top: 0; left: 0; width: 200%; height: 200%;
@@ -75,12 +92,21 @@ h1 { font-family: 'Cinzel Decorative'; font-size: 1.4rem; margin: 5px 0; }
     align-items: center;
 }
 
+/* 5. EL TRÉBOL QUE RESPIRA */
 .clover-img {
     width: 190px;
     mix-blend-mode: multiply;
 }
 
-/* ESCUDO GRANDE ABAJO */
+.breathing-clover {
+    animation: breathe 4s ease-in-out infinite;
+}
+
+@keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+}
+
 .squad-badge {
     position: relative;
     margin: 30px auto 10px;
@@ -94,14 +120,10 @@ h1 { font-family: 'Cinzel Decorative'; font-size: 1.4rem; margin: 5px 0; }
 }
 
 .stat-bar { margin: 10px 0; text-align: left; font-size: 0.8rem; }
-.bar { 
-    background: rgba(0,0,0,0.1); 
-    height: 10px; 
-    border-radius: 5px; 
-    overflow: visible; /* Permite que la barra de amor "explote" hacia afuera */
-}
+.bar { background: rgba(0,0,0,0.1); height: 10px; border-radius: 5px; overflow: visible; }
 .fill { background: var(--dark-magic); height: 100%; border-radius: 5px; box-shadow: 0 0 8px var(--anti-magic); transition: 1s; }
 
+/* 3. BOTÓN CON AURA PALPITANTE */
 .magic-btn {
     background: var(--dark-magic);
     color: var(--anti-magic);
@@ -111,9 +133,20 @@ h1 { font-family: 'Cinzel Decorative'; font-size: 1.4rem; margin: 5px 0; }
     cursor: pointer;
     transition: 0.4s;
     margin-top: 15px;
+    position: relative;
 }
 
-.magic-btn:hover { background: var(--anti-magic); color: white; transform: scale(1.1); }
+.pulsing-btn {
+    animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0px var(--anti-magic); }
+    50% { box-shadow: 0 0 20px var(--anti-magic); }
+    100% { box-shadow: 0 0 0px var(--anti-magic); }
+}
+
+.magic-btn:hover { background: var(--anti-magic); color: white; transform: scale(1.1); animation: none; }
 
 .particle {
     position: absolute;
