@@ -50,37 +50,32 @@ h1 { font-family: 'Cinzel Decorative'; font-size: 1.4rem; margin: 5px 0; }
 .photo-frame {
     position: relative;
     margin: 20px auto;
-    height: 180px;
+    height: 200px; /* Aumentado un poco para el trébol más grande */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* TRÉBOL MÁS GRANDE */
 .clover-img {
-    width: 140px;
+    width: 190px; /* Tamaño aumentado */
     mix-blend-mode: multiply;
     transition: 0.5s;
 }
 
-/* --- CAMBIOS AQUÍ: ESCUDO VISIBLE Y GRANDE --- */
+/* ESCUDO DEBAJO DEL BOTÓN Y GRANDE */
 .squad-badge {
-    position: absolute;
-    bottom: -15px;      /* Posición ajustada */
-    right: 5%;          /* Posición ajustada */
-    width: 100px;       /* Tamaño aumentado notablemente */
-    background: none;   /* Quitamos el fondo oscuro que tapaba el logo */
-    padding: 0;         /* Sin padding para que luzca la imagen */
-    border-radius: 50%;
-    border: 1.5px solid var(--gold);
-    box-shadow: 0 0 15px var(--gold);
+    position: relative;
+    margin: 25px auto 10px; /* Centrado y con espacio arriba */
+    width: 110px;           /* Tamaño grande */
+    background: none;
     z-index: 15;
 }
 
 .squad-badge img {
     width: 100%;
     display: block;
-    /* Quitamos multiply para que el color del logo sea real */
-    filter: drop-shadow(0 0 5px rgba(0,0,0,0.6));
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.4));
 }
 
 .stat-bar { margin: 10px 0; text-align: left; font-size: 0.8rem; }
