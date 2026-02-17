@@ -9,6 +9,13 @@
 
 body {
     background-color: #050505;
+    /* PARTÍCULAS ROJAS BRILLANTES EN EL FONDO */
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(255, 0, 60, 0.15) 1px, transparent 1px),
+        radial-gradient(circle at 80% 70%, rgba(255, 0, 60, 0.2) 2px, transparent 2px),
+        radial-gradient(circle at 50% 10%, rgba(255, 0, 60, 0.1) 1px, transparent 1px),
+        radial-gradient(circle at 10% 80%, rgba(255, 0, 60, 0.2) 2px, transparent 2px);
+    background-size: 100px 100px; /* Esto hace que se repitan por todo el fondo negro */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,24 +57,23 @@ h1 { font-family: 'Cinzel Decorative'; font-size: 1.4rem; margin: 5px 0; }
 .photo-frame {
     position: relative;
     margin: 20px auto;
-    height: 200px; /* Aumentado un poco para el trébol más grande */
+    height: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* TRÉBOL MÁS GRANDE */
 .clover-img {
-    width: 190px; /* Tamaño aumentado */
+    width: 190px; /* Trébol grande */
     mix-blend-mode: multiply;
     transition: 0.5s;
 }
 
-/* ESCUDO DEBAJO DEL BOTÓN Y GRANDE */
+/* ESCUDO MÁS GRANDE ABAJO */
 .squad-badge {
     position: relative;
-    margin: 25px auto 10px; /* Centrado y con espacio arriba */
-    width: 110px;           /* Tamaño grande */
+    margin: 30px auto 10px; /* Más espacio arriba */
+    width: 140px;           /* ESCUDO AÚN MÁS GRANDE */
     background: none;
     z-index: 15;
 }
@@ -75,7 +81,7 @@ h1 { font-family: 'Cinzel Decorative'; font-size: 1.4rem; margin: 5px 0; }
 .squad-badge img {
     width: 100%;
     display: block;
-    filter: drop-shadow(0 0 5px rgba(0,0,0,0.4));
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
 }
 
 .stat-bar { margin: 10px 0; text-align: left; font-size: 0.8rem; }
