@@ -62,27 +62,26 @@ h1 { font-family: 'Cinzel Decorative'; font-size: 1.4rem; margin: 5px 0; }
     transition: 0.5s;
 }
 
-/* --- MEJORAS EN EL ESCUDO --- */
+/* --- CAMBIOS AQUÍ: ESCUDO VISIBLE Y GRANDE --- */
 .squad-badge {
     position: absolute;
-    bottom: -5px;
-    right: 12%;
-    width: 85px; /* Más grande */
-    background: rgba(20, 20, 20, 0.4); /* Fondo sutil, no negro total */
-    padding: 10px;
+    bottom: -15px;      /* Posición ajustada */
+    right: 5%;          /* Posición ajustada */
+    width: 100px;       /* Tamaño aumentado notablemente */
+    background: none;   /* Quitamos el fondo oscuro que tapaba el logo */
+    padding: 0;         /* Sin padding para que luzca la imagen */
     border-radius: 50%;
-    border: 2px solid var(--gold);
+    border: 1.5px solid var(--gold);
     box-shadow: 0 0 15px var(--gold);
-    backdrop-filter: blur(2px);
     z-index: 15;
 }
 
 .squad-badge img {
     width: 100%;
-    /* Si el escudo tiene fondo transparente, esto lo hará resaltar */
-    filter: drop-shadow(0 0 5px rgba(0,0,0,0.8));
+    display: block;
+    /* Quitamos multiply para que el color del logo sea real */
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.6));
 }
-/* ---------------------------- */
 
 .stat-bar { margin: 10px 0; text-align: left; font-size: 0.8rem; }
 .bar { background: rgba(0,0,0,0.1); height: 8px; border-radius: 4px; overflow: hidden; }
@@ -99,12 +98,7 @@ h1 { font-family: 'Cinzel Decorative'; font-size: 1.4rem; margin: 5px 0; }
     margin-top: 15px;
 }
 
-.magic-btn:hover { 
-    background: var(--anti-magic); 
-    color: white; 
-    transform: scale(1.1);
-    box-shadow: 0 0 20px var(--anti-magic);
-}
+.magic-btn:hover { background: var(--anti-magic); color: white; transform: scale(1.1); }
 
 .particle {
     position: absolute;
