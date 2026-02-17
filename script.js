@@ -19,7 +19,7 @@ function triggerMagic() {
     const title = document.getElementById('title');
     const msg = document.getElementById('message');
     
-    title.textContent = "¡JESÚS, SUPERA TUS LÍMITES!";
+    title.textContent = "¡SIRIU, SUPERA TUS LÍMITES!";
     title.style.color = "#ff003c";
     title.style.textShadow = "0 0 20px #ff003c";
     
