@@ -1,6 +1,23 @@
+// Ocultar el loader cuando la página cargue
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const loader = document.getElementById('loader');
+        loader.style.opacity = '0';
+        setTimeout(() => loader.style.display = 'none', 500);
+    }, 1500); // 1.5 segundos de carga épica
+});
+
+// 7. MENSAJE DE DESPEDIDA
+function despedida() {
+    return "¿Estás seguro de abandonar tu orden, caballero?";
+}
+
 function triggerMagic() {
     const music = document.getElementById('bg-music');
     music.play().catch(() => console.log("Música activada"));
+
+    // 3. ACTIVAR MODO DEMONIO (Fondo cambia a rojo oscuro)
+    document.body.classList.add('demon-mode');
 
     const title = document.getElementById('title');
     const msg = document.getElementById('message');
@@ -15,7 +32,9 @@ function triggerMagic() {
     
     const container = document.querySelector('.grimorio-container');
     container.style.animation = "shake 0.5s";
-    setTimeout(() => { container.style.animation = "aura 3s infinite ease-in-out"; }, 500);
+    setTimeout(() => { 
+        container.style.animation = "aura 3s infinite ease-in-out"; 
+    }, 500);
 }
 
 function createParticles() {
