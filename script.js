@@ -1,13 +1,11 @@
-// Ocultar el loader cuando la página cargue
 window.addEventListener('load', () => {
     setTimeout(() => {
         const loader = document.getElementById('loader');
         loader.style.opacity = '0';
         setTimeout(() => loader.style.display = 'none', 500);
-    }, 1500); // 1.5 segundos de carga épica
+    }, 1500);
 });
 
-// 7. MENSAJE DE DESPEDIDA
 function despedida() {
     return "¿Estás seguro de abandonar tu orden, caballero?";
 }
@@ -16,7 +14,6 @@ function triggerMagic() {
     const music = document.getElementById('bg-music');
     music.play().catch(() => console.log("Música activada"));
 
-    // 3. ACTIVAR MODO DEMONIO (Fondo cambia a rojo oscuro)
     document.body.classList.add('demon-mode');
 
     const title = document.getElementById('title');
@@ -32,9 +29,7 @@ function triggerMagic() {
     
     const container = document.querySelector('.grimorio-container');
     container.style.animation = "shake 0.5s";
-    setTimeout(() => { 
-        container.style.animation = "aura 3s infinite ease-in-out"; 
-    }, 500);
+    setTimeout(() => { container.style.animation = "aura 3s infinite ease-in-out"; }, 500);
 }
 
 function createParticles() {
@@ -46,18 +41,12 @@ function createParticles() {
         const y = window.innerHeight / 2;
         p.style.left = x + 'px';
         p.style.top = y + 'px';
-        
         const destX = (Math.random() - 0.5) * 1000;
         const destY = (Math.random() - 0.5) * 1000;
-        
         container.appendChild(p);
-        
         p.animate([
             { transform: 'translate(0, 0) scale(1.5)', opacity: 1 },
             { transform: `translate(${destX}px, ${destY}px) scale(0)`, opacity: 0 }
-        ], {
-            duration: 1500,
-            easing: 'ease-out'
-        }).onfinish = () => p.remove();
+        ], { duration: 1500, easing: 'ease-out' }).onfinish = () => p.remove();
     }
 }
