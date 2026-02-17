@@ -95,3 +95,77 @@ body.demon-mode { background-color: #1a0003; }
 .magic-btn { background: var(--dark-magic); color: var(--anti-magic); border: 2px solid var(--anti-magic); padding: 12px 25px; font-family: 'Cinzel Decorative'; cursor: pointer; margin-top: 15px; }
 .pulsing-btn { animation: pulseGlow 2s infinite; }
 @keyframes pulseGlow { 0%, 100% { box-shadow: 0 0 0px var(--anti-magic); } 50% { box-shadow: 0 0 20px var(--anti-magic); } }
+/* --- AJUSTES PARA MÓVILES --- */
+
+@media (max-width: 600px) {
+    body {
+        /* Permitimos el scroll en móviles si el contenido es largo */
+        overflow-y: auto; 
+        align-items: flex-start; /* Alinea al inicio para que no se corte arriba */
+        padding: 20px 0;
+    }
+
+    .grimorio-container {
+        width: 85%; /* Un poco más de aire a los lados */
+        padding: 15px;
+        border-width: 8px; /* Borde más fino para ganar espacio interno */
+        margin-top: 20px;
+    }
+
+    /* Ajustamos el tamaño de los glifos mágicos para que no se salgan */
+    .magic-glyphs {
+        width: 180px;
+        height: 180px;
+    }
+
+    .glyph-circle.inner {
+        width: 140px;
+        height: 140px;
+    }
+
+    .glyph-circle.outer {
+        width: 170px;
+        height: 170px;
+    }
+
+    .photo-frame {
+        height: 140px; /* Reducimos la altura del contenedor de la foto */
+    }
+
+    .clover-img {
+        width: 130px; /* Trébol más pequeño */
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    /* Ajuste de barras de estadísticas */
+    .stats {
+        font-size: 0.8rem;
+    }
+    
+    .stat-bar {
+        margin-bottom: 10px;
+    }
+
+    /* Reducir el tamaño del escudo al final */
+    .squad-badge {
+        width: 100px;
+    }
+}
+
+/* Fix para las partículas que se crean con JS */
+.particle {
+    position: fixed;
+    width: 5px;
+    height: 5px;
+    background: var(--anti-magic);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1000;
+}
