@@ -1,117 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=MedievalSharp&display=swap');
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Grimorio de Jesús</title>
+    <link rel="icon" type="image/png" href="trebol.png">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="background-particles"></div>
+    <div id="particles-container"></div>
 
-:root {
-    --dark-magic: #0d0d0d;
-    --anti-magic: #ff003c;
-    --gold: #d4af37;
-    --paper: #e6d5b8;
-}
+    <div class="grimorio-container">
+        <header>
+            <div class="clover-header">♣</div>
+            <h1>Grimorio de Jesús</h1>
+            <p class="subtitle">Orden de los Toros Negros</p>
+        </header>
 
-body {
-    background-color: #050505;
-    /* PARTÍCULAS ROJAS BRILLANTES EN EL FONDO */
-    background-image: 
-        radial-gradient(circle at 20% 30%, rgba(255, 0, 60, 0.15) 1px, transparent 1px),
-        radial-gradient(circle at 80% 70%, rgba(255, 0, 60, 0.2) 2px, transparent 2px),
-        radial-gradient(circle at 50% 10%, rgba(255, 0, 60, 0.1) 1px, transparent 1px),
-        radial-gradient(circle at 10% 80%, rgba(255, 0, 60, 0.2) 2px, transparent 2px);
-    background-size: 100px 100px; /* Esto hace que se repitan por todo el fondo negro */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    margin: 0;
-    overflow: hidden;
-    font-family: 'MedievalSharp', cursive;
-}
+        <section class="page-content">
+            <div class="photo-frame">
+                <img src="trebol.png" class="clover-img" alt="Trébol de Jesús">
+            </div>
 
-#particles-container {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    pointer-events: none;
-    z-index: 1;
-}
+            <h2 id="title">Magia de Antigravedad</h2>
+            <p id="message">"Jesús, en este reino y en cualquier otro, mi magia siempre te elegirá a ti. ¡Superemos los límites juntos!"</p>
+            
+            <div class="stats">
+                <div class="stat-bar"><span>Fuerza:</span> <div class="bar"><div class="fill" style="width: 100%;"></div></div></div>
+                <div class="stat-bar"><span>Poder Mágico:</span> <div class="bar"><div class="fill" style="width: 95%;"></div></div></div>
+                <div class="stat-bar"><span>Amor por ti:</span> <div class="bar"><div class="fill" style="width: 200%; background: #ff003c; box-shadow: 0 0 15px #ff003c;"></div></div></div>
+            </div>
 
-.grimorio-container {
-    background: var(--paper);
-    width: 90%;
-    max-width: 380px;
-    padding: 25px;
-    border: 12px solid #2b1d12;
-    box-shadow: 0 0 40px rgba(0,0,0,0.9), 0 0 20px var(--anti-magic);
-    text-align: center;
-    position: relative;
-    z-index: 10;
-    background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
-    animation: aura 3s infinite ease-in-out;
-}
+            <button class="magic-btn" onclick="triggerMagic()">DESATAR HECHIZO</button>
 
-@keyframes aura {
-    0%, 100% { box-shadow: 0 0 20px rgba(255, 0, 60, 0.3); }
-    50% { box-shadow: 0 0 50px rgba(255, 0, 60, 0.6); }
-}
+            <div class="squad-badge">
+                <img src="escudo.png" alt="Black Bulls">
+            </div>
 
-h1 { font-family: 'Cinzel Decorative'; font-size: 1.4rem; margin: 5px 0; }
-.subtitle { font-size: 0.8rem; color: #444; text-transform: uppercase; letter-spacing: 2px; }
+            <audio id="bg-music" loop>
+                <source src="music.mp3" type="audio/mpeg">
+            </audio>
+        </section>
+    </div>
 
-.photo-frame {
-    position: relative;
-    margin: 20px auto;
-    height: 180px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.clover-img {
-    width: 190px; /* Trébol grande */
-    mix-blend-mode: multiply;
-    transition: 0.5s;
-}
-
-/* ESCUDO MÁS GRANDE ABAJO */
-.squad-badge {
-    position: relative;
-    margin: 30px auto 10px; /* Más espacio arriba */
-    width: 140px;           /* ESCUDO AÚN MÁS GRANDE */
-    background: none;
-    z-index: 15;
-}
-
-.squad-badge img {
-    width: 100%;
-    display: block;
-    filter: drop-shadow(0 0 10px rgba(0,0,0,0.5));
-}
-
-.stat-bar { margin: 10px 0; text-align: left; font-size: 0.8rem; }
-.bar { background: rgba(0,0,0,0.1); height: 8px; border-radius: 4px; overflow: hidden; }
-.fill { background: var(--dark-magic); height: 100%; box-shadow: 0 0 8px var(--anti-magic); }
-
-.magic-btn {
-    background: var(--dark-magic);
-    color: var(--anti-magic);
-    border: 2px solid var(--anti-magic);
-    padding: 12px 25px;
-    font-family: 'Cinzel Decorative';
-    cursor: pointer;
-    transition: 0.4s;
-    margin-top: 15px;
-}
-
-.magic-btn:hover { background: var(--anti-magic); color: white; transform: scale(1.1); }
-
-.particle {
-    position: absolute;
-    background: var(--anti-magic);
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-}
-
-@keyframes shake {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    20% { transform: translate(-3px, 0px) rotate(-1deg); }
-    40% { transform: translate(3px, 2px) rotate(1deg); }
-    100% { transform: translate(0px, 0px) rotate(0deg); }
-}
+    <script src="script.js"></script>
+</body>
+</html>
