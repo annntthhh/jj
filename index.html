@@ -7,9 +7,21 @@
     <link rel="icon" type="image/png" href="trebol.png">
     <link rel="stylesheet" href="main.css">
 </head>
-<body>
+<body onbeforeunload="return despedida()">
+    <div id="loader">
+        <img src="escudo.png" alt="Cargando Magia..." class="loader-shield">
+        <p>Invocando Grimorio...</p>
+    </div>
+
     <div class="paper-overlay"></div>
     <div class="background-particles"></div>
+    
+    <div class="flying-pages-container">
+        <div class="page-leaf"></div>
+        <div class="page-leaf"></div>
+        <div class="page-leaf"></div>
+    </div>
+
     <div id="particles-container"></div>
 
     <div class="grimorio-container">
