@@ -34,18 +34,23 @@ function triggerMagic() {
 
 function createParticles() {
     const container = document.getElementById('particles-container');
-    for (let i = 0; i < 70; i++) {
+    // Usamos el centro de la ventana visual
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+
+    for (let i = 0; i < 50; i++) { // Bajamos a 50 para que el móvil no sufra
         const p = document.createElement('div');
         p.className = 'particle';
-        const x = window.innerWidth / 2;
-        const y = window.innerHeight / 2;
-        p.style.left = x + 'px';
-        p.style.top = y + 'px';
-        const destX = (Math.random() - 0.5) * 1000;
-        const destY = (Math.random() - 0.5) * 1000;
+        p.style.left = centerX + 'px';
+        p.style.top = centerY + 'px';
+        
+        const destX = (Math.random() - 0.5) * (window.innerWidth > 600 ? 1000 : 400);
+        const destY = (Math.random() - 0.5) * (window.innerHeight > 600 ? 1000 : 400);
+
         container.appendChild(p);
+
         p.animate([
-            { transform: 'translate(0, 0) scale(1.5)', opacity: 1 },
+            { transform: 'translate(-50%, -50%) scale(1.5)', opacity: 1 },
             { transform: `translate(${destX}px, ${destY}px) scale(0)`, opacity: 0 }
         ], { duration: 1500, easing: 'ease-out' }).onfinish = () => p.remove();
     }
